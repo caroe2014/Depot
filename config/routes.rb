@@ -2,7 +2,16 @@ Depot::Application.routes.draw do
   # get "store/index"
   root :to => 'store#index', :as => 'store'
 
+  resources :carts do
+    resources :line_items
+  end
+
+  resources :line_items
+
+  resources :carts
+
   resources :products
+
 
   # root "public#index"
   # get 'show/:permalink', :to  => 'public#show'

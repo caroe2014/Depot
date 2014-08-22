@@ -10,6 +10,6 @@
  *
  *= require_self
  *= depot.css 
- *= scaffolds.css.scss 
+ *= scaffold.css
  *= require_tree .
  */

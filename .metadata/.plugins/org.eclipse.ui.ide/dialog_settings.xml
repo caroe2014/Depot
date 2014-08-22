@@ -13,4 +13,11 @@
 		<item value="org.eclipse.rcp:4.3.2.v20140221-1700"/>
 		<item value="org.radrails.rails:3.4.2.1400262587-7n-7Z7oKtUqxrXdp"/>
 	</list>
+	<section name="ExternalProjectImportWizard">
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.radrails.rails.ui.projectWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+		</list>
+	</section>
 </section>
