@@ -1,0 +1,25 @@
+<%if @cart.line_items.any? %>	
+	<table>
+		<% total = 0.0 %>	
+		<% for item in @cart.line_items %>
+			<% subtotal = item.price.to_f * item.quantity.to_i %>
+			<% total = total + subtotal %>
+
+			<tr>
+				<td><%= item.quantity %>&times;</td>
+				<td><%= item.product.title %></td>
+				<td class="item_price"><%= number_to_currency( subtotal ) %></td>
+				<td><%= link_to 'Del', line_items_path(:id => item.id), 
+			    method: :delete %>   <!-- , data: { confirm: 'Are you sure?' } --></td>
+			</tr>
+				
+		<% end %>
+		<tr class="total_line">
+			<td colspan="2">Total</td>
+			<td class="total_cell"><%= number_to_currency( total ) %></td>
+  		</tr>
+		<% total = 0.0 %>
+	</table>
+	<%= button_to 'Empty cart', @cart, :method => :delete,
+    :confirm => 'Are you sure?' %>
+<% end %>			

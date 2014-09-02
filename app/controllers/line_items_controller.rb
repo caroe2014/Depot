@@ -5,13 +5,7 @@ class LineItemsController < ApplicationController
 
   # GET /line_items
   # GET /line_items.json
-  def index
-    if session[:counter].nil?
-      counter = 0  
-    end
-    counter += 1
-    session[:counter] = counter
-    
+  def index    
     @line_items = LineItem.all
   end
 
@@ -35,14 +29,16 @@ class LineItemsController < ApplicationController
   # Sustituida por la linea despues de product = Pro...  
   #  @line_item = LineItem.new(line_item_params)
    
-    @cart = current_cart
-    puts " valor de @cart = #{@cart.id}"
-    product = Product.find(params[:product_id])
-    @line_item = @cart.line_items.build(:product => product)
+    @cart = current_cart   
+    product = Product.find_by_id(params[:product_id].to_i)    
+#    @line_item = @cart.line_items.build(:product => product)
+    @line_item = @cart.add_product(product, @cart)
+    
+    session[:counter] = 0
     
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.cart, notice: 'Line item was successfully created.') }
+        format.html { redirect_to(@line_item.cart) }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }
@@ -56,7 +52,7 @@ class LineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @line_item.update(line_item_params)
-        format.html { redirect_to @line_item, notice: 'Line item was successfully updated.' }
+        format.html { redirect_to @line_item }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -68,11 +64,18 @@ class LineItemsController < ApplicationController
   # DELETE /line_items/1
   # DELETE /line_items/1.json
   def destroy
+    @cart = current_cart
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+#      format.html { redirect_to store_url }
+      format.html { redirect_to(@cart) }
       format.json { head :no_content }
     end
+   
+  end
+
+  def total_price
+    line_items.to_a.sum { |item| item.total_price }
   end
 
   private

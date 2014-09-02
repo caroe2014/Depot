@@ -3,7 +3,7 @@
 <head>
   <title>Depot</title>
   <meta charset="UTF-8">
-  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "scaffold.css.scss" %>
   <%= stylesheet_link_tag('depot',:media => :all) %>
   
 <!--  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>    -->
@@ -17,6 +17,9 @@
   </div>
   <div id="columns">
 		<div id="side">
+			<div id="cart">				
+               <%= render(:controller => 'cart', :partial => 'carts/cart', :locals => {:@cart => @cart} ) %>	
+            </div>
 			<%= link_to("Home", {:controller => 'store'}, :class => 'action index') %><br />
 			<%= link_to("Fac", {:controller => 'store'}, :class => 'action fac') %><br />
 			<%= link_to("News", {:controller => 'store'}, :class => 'action news') %><br />

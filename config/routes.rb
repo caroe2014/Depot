@@ -1,6 +1,8 @@
 Depot::Application.routes.draw do
   # get "store/index"
-  root :to => 'store#index', :as => 'store'
+
+  resources :store
+  # root :to => 'store#index', :as => 'store', :via => [:get, :post]
 
   resources :carts do
     resources :line_items
@@ -19,7 +21,7 @@ Depot::Application.routes.draw do
 
   # get 'admin', :to => "access#index"
 
-  match ':controller(/:action(/:id))', :via => [:get, :post]
+  match ':controller(/:action(/:id))', :via => [:get, :post, :delete]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
