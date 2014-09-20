@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+jQuery.ajaxSetup({
+	'beforesend': function(xhr) {xhr.setRequestHeader("accept", "text/javascript")}
+})
+
+$(document).ready(function() {
+	$("#current_item").click(function() {
+		$.get($(this).attr("action"), $(this).serialize(), null, "script" );
+		return false;
+	})
+})

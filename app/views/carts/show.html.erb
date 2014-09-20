@@ -8,9 +8,6 @@
 </ul>
 
 <!-- <%= link_to 'Edit', edit_cart_path(@cart.id) %> -->
-<!-- <%= link_to 'Back', carts_path(@cart)  %>  --> 
+<!-- <%= link_to 'Back', store_path(@cart)  %>  --> 
 
-<%= link_to 'Back', store_path %>
-
-<%= button_to 'Empty cart', @cart, :method => :delete,
-    :confirm => 'Are you sure?' %>
+<%= link_to 'Back', :controller => 'store', :action => 'index' %>

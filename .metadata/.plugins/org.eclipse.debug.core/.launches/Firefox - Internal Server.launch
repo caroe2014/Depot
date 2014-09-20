@@ -9,11 +9,15 @@
 <stringAttribute key="httpGetData" value=""/>
 <stringAttribute key="httpPostContentType" value=""/>
 <stringAttribute key="httpPostData" value=""/>
-<booleanAttribute key="overrideDebugPreferences" value="false"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+<listEntry value="org.eclipse.debug.ui.launchGroup.run"/>
+</listAttribute>
+<booleanAttribute key="overrideDebugPreferences" value="true"/>
 <intAttribute key="serverType" value="1"/>
-<intAttribute key="startActionType" value="1"/>
+<intAttribute key="startActionType" value="3"/>
 <stringAttribute key="startPagePath" value=""/>
-<stringAttribute key="startPageUrl" value=""/>
+<stringAttribute key="startPageUrl" value="http://localhost:3000/store"/>
 <booleanAttribute key="suspendOnDebuggerKeywords" value="true"/>
 <booleanAttribute key="suspendOnErrors" value="true"/>
 <booleanAttribute key="suspendOnExceptions" value="false"/>

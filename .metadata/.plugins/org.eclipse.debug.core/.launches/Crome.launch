@@ -14,7 +14,7 @@
 <intAttribute key="serverType" value="1"/>
 <intAttribute key="startActionType" value="3"/>
 <stringAttribute key="startPagePath" value=""/>
-<stringAttribute key="startPageUrl" value="localhost:3000"/>
+<stringAttribute key="startPageUrl" value="http://localhost:3000/store"/>
 <booleanAttribute key="suspendOnDebuggerKeywords" value="false"/>
 <booleanAttribute key="suspendOnErrors" value="false"/>
 <booleanAttribute key="suspendOnExceptions" value="false"/>

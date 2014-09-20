@@ -31,14 +31,18 @@ class LineItemsController < ApplicationController
    
     @cart = current_cart   
     product = Product.find_by_id(params[:product_id].to_i)    
-#    @line_item = @cart.line_items.build(:product => product)
+    
     @line_item = @cart.add_product(product, @cart)
     
     session[:counter] = 0
-    
+    @current_item = @line_item
+
+    session[:current_item] = @current_item.id
+        
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to(@line_item.cart) }
+        format.html { redirect_to :back }
+        format.js   { @current_item }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }
@@ -63,19 +67,17 @@ class LineItemsController < ApplicationController
 
   # DELETE /line_items/1
   # DELETE /line_items/1.json
+  
   def destroy
     @cart = current_cart
+    @line_item = LineItem.find(params[:id])
     @line_item.destroy
     respond_to do |format|
-#      format.html { redirect_to store_url }
-      format.html { redirect_to(@cart) }
+      format.html { redirect_to :back }
+#      format.html { redirect_to(@cart) }
       format.json { head :no_content }
     end
    
-  end
-
-  def total_price
-    line_items.to_a.sum { |item| item.total_price }
   end
 
   private

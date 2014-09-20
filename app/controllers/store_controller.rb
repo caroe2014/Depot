@@ -15,9 +15,17 @@ class StoreController < ApplicationController
     set_current_cart
   end
   
-  def show   
+  def show 
+    
+    redirect_to(:controller => 'carts', :action => 'show')
   end
   
+  def delete
+    
+    redirect_to line_item_path(params[:id])
+  end
+    
+    
   private
   
     def set_current_cart

@@ -70,8 +70,7 @@ class CartsController < ApplicationController
     @cart.destroy
     session[:card_id] = nil
     respond_to do |format|
-      format.html { redirect_to store_url,
-              :notice => 'Your cart is currently emplty' }
+      format.html { redirect_to :back, :notice => 'Your cart is currently emplty' }
       format.json { head :no_content }
     end
   end
@@ -79,7 +78,8 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
-      @cart = Cart.find(params[:id])
+      @cart = Cart.find_by_id(params[:id])
+      @cart
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
