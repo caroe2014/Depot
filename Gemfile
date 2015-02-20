@@ -5,7 +5,14 @@ gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'mysql2'
+group :production do
+  gem 'pg'
+end
+
+group :development, :test do
+  gem 'mysql2'
+  gem 'debugger'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -33,6 +40,17 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'will_paginate', '~> 3.0.7'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner' 
+end
+
+gem 'rabl'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -1,5 +1,10 @@
 /* Global styles */
 
+.locale {
+        float:right;
+        padding-top: 0.2em
+}
+
 #store #notice {
         color: #000;
         border: 2px solid red;
@@ -74,6 +79,52 @@
   background:   #f8b0f8;
 }
 
+/*  Style for Payment Types  */
+
+#payment_list table {
+        border-collapse: collapse;
+        width: 60%
+}
+
+#payment_list table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+
+#payment_list .line_even {
+  background:   #e0f8f8;
+}
+
+#payment_list .line_odd {
+  background:   #f8b0f8;
+}
+
+#payment_list .list_description2 {
+  width:        60%;
+}
+
+#payment_list .list_description2 dl {
+        margin: 0;
+        padding: 10px;
+}
+
+#payment_list .list_description2 dt {
+	color:        #244;
+	font-weight:  bold;
+	font-size:    larger;
+}
+
+#payment_list .list_actions2 {
+  font-size:    x-small;
+  float: right;  
+  padding-left: 1em;
+}
+
+#link {
+	
+  padding: 10px;
+}
+
 /* An entry in the store catalog */
 
 #store  .entry {
@@ -125,14 +176,14 @@
 .field_with_errors { }
 .field_with_errors label { color: #AA0000; }
 .field_with_errors input { border: 1px solid #AA0000;}
-#error_explanation { width: 400px; padding: 0; margin: 0 auto 1.5em;
+error_explanation { width: 400px; padding: 0; margin: 0 auto 1.5em;
   border: 1px solid #AA0000; background-color: #FFFFFF; font-size: 12px; }
-#error_explanation h2 { font-weight: bold; font-size: 12px;
+error_explanation h2 { font-weight: bold; font-size: 12px;
   padding: 5px 5px 5px 15px; margin: 0; width: 380px;
   background-color: #AA0000; color: #FFFFFF; }
-#error_explanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
-#error_explanation ul { margin-top: 0; }
-#error_explanation ul li { list-style: square; }
+error_explanation p { color: #333333; margin: 0; padding: 3px 0.5em; }
+error_explanation ul { margin-top: 0; }
+error_explanation ul li { list-style: square; }
 
 /* START:mainlayout */
 /* Styles for main page */
@@ -253,4 +304,37 @@
 #store .item_price {	
   text-align: right;
 
+}
+
+/* Styles for orders module */
+
+.depot_form {
+  background: #9c9;
+}
+
+
+.depot_form fieldset { background: #9c9;
+}
+
+.depot_form legend { color: #dfd;
+background: #141; font-family: sans-serif; padding: 0.2em 1em;
+}
+.depot_form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+.depot_form select, .depot_form textarea, .depot_form input {
+  margin-left: 0.5em;
+}
+
+.depot_form .submit {
+  margin-left: 4em;
+}
+
+.depot_form div {
+  margin: 0.5em 0;
 }

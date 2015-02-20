@@ -4,24 +4,25 @@
 <table>
   <% @products.each do |product| %>
     <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-<td>
+       <td>
         <%= image_tag(product.image_url, :class => 'list_image') %>
-</td>
-<td class="list_description">
-   	<dl>
-		<dt><%= product.title %></dt>
-		<dd><%= truncate(strip_tags(product.description),
-			:length => 80) %></dd>
-	</dl> 
-</td>
-<td class="list_actions">
-	<%= link_to 'Show', product %><br/>
-	<%= link_to 'Edit', edit_product_path(product) %><br/> 
-	<%= link_to 'Destroy', product,
-                    :data => {:confirm => 'Are you sure?'},
-                    :method => :delete %>
-</td> 
-</tr>
+       </td>
+       
+		<td class="list_description">
+		   	<dl>
+				<dt><%= product.title %></dt>
+				<dd><%= truncate(strip_tags(product.description),
+					:length => 80) %></dd>
+			</dl> 
+		</td>
+		<td class="list_actions">
+			<dt><%= link_to 'Show', product %><br/></dt>
+			<dt><%= link_to 'Edit', edit_product_path(product) %><br/></dt>
+			<dt><%= link_to 'Destroy', product,
+		                    :data => {:confirm => 'Are you sure?'},
+		                    :method => :delete %></dt>
+		</td> 
+   </tr>
 <% end %>
   </table>
 </div>

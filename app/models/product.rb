@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   has_many  :line_items 
+  has_many :orders, :through => :line_items
   
   before_destroy :ensure_not_referenced_by_any_line_item
   
@@ -8,12 +9,12 @@ class Product < ActiveRecord::Base
   validates :title, :uniqueness => true, :length => {:minimum => 10, :message => 'must be at least ten characters long.' }
   validates :image_url, :format => {
 #            :with => %r{\.(gif|jpg|png)\z/i},
-            :with => %r{[.](gif|jpe?g|png)\z/i},
+            :with => %r{[.](GIF|gif|JPE?G|jpe?g|png|PNG)\z},
             :message => 'must be a URL for GIF, JPG or PNG image.'
             }
   # default_scope :order  => 'title' 
   scope :default, lambda { order("products.title ASC")}
-  
+  scope :sorted, lambda { order("products.title ASC")}
   private
 
     # ensure that there are no line items referencing this product

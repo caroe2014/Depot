@@ -20,6 +20,6 @@
 <stringAttribute key="startPageUrl" value="http://localhost:3000/store"/>
 <booleanAttribute key="suspendOnDebuggerKeywords" value="true"/>
 <booleanAttribute key="suspendOnErrors" value="true"/>
-<booleanAttribute key="suspendOnExceptions" value="false"/>
+<booleanAttribute key="suspendOnExceptions" value="true"/>
 <booleanAttribute key="suspendOnFirstLine" value="false"/>
 </launchConfiguration>

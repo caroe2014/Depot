@@ -12,8 +12,11 @@
 			<td class="total_cell"><%= number_to_currency( @cart.total_price ) %></td>
   		</tr>
 	</table>
-	
-	<%= button_to 'Empty cart', cart_path(:id => @cart.id), :method => :delete, :confirm => 'Are you sure?' %>
+	<div id="side-buttons">
+		
+		<%= set_checkout %>
+		<%= set_empty_cart %>
+	</div>	
 <!--	
 <% end %>
  -->

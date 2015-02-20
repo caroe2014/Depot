@@ -1,4 +1,5 @@
 class CartsController < ApplicationController
+  skip_before_filter :authorize, :only => [:create, :update, :delete]
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
   layout "application"
@@ -67,11 +68,19 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
+    
     @cart.destroy
     session[:card_id] = nil
     respond_to do |format|
-      format.html { redirect_to :back, :notice => 'Your cart is currently emplty' }
-      format.json { head :no_content }
+      begin
+         format.html { redirect_to :back }
+      
+      rescue ActionController::RedirectBackError
+         format.html { redirect_to store_url }
+      else
+        format.js { @cart }
+        format.json { head :ok }
+      end  
     end
   end
 

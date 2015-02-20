@@ -1,6 +1,7 @@
 class Cart < ActiveRecord::Base
-  has_many :line_items, :dependent => :destroy
-
+#  has_many :line_items, :dependent => :destroy
+  has_many :line_items
+  
   def add_product(product, cart)
       current_item = line_items.where(:product_id => product.id.to_i).where(:cart_id => cart.id).first 
       

@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   layout "application"
   
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: [ :show, :edit, :update, :destroy ]
 
   # GET /products
   # GET /products.json
@@ -64,6 +64,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def who_bought
+    @product = Product.find(params[:id])
+    @order = Order.last
+    respond_to do |format|
+      format.atom
+      format.xml { render :xml => @product }
+      format.json
+    end
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
