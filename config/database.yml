@@ -35,5 +35,5 @@ production:
   database: depot_production
   pool: 5
   username: depot
-  password: secretpassword
+  password: production
   socket: /tmp/mysql.sock
