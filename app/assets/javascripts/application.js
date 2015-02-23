@@ -15,30 +15,5 @@
 //= require turbolinks
 //= require_tree .
 
-jQuery.ajaxSetup({
-	'beforesend': function(xhr) {xhr.setRequestHeader("accept", "text/javascript")}
-})
-
-jQuery.fn.clickWithAjax = function() {
-	this.click(function() {
-		$.post($(this).attr("action"), $(this).serialize(), null, "script" );		
-		return false;
-	})
-};
-
-jQuery.fn.deleteWithAjax = function() {
-	this.click(function() {
-		$.delete($(this).attr("action"), $(this).serialize(), null, "script" );		
-		return false;
-	})
-};
-
-
- $(document).ready(function() {
-	
-	$("#current_item").clickWithAjax();
-	$("#current_item").deleteWithAjax();
-	
-})
 
 
