@@ -1,13 +1,13 @@
 /*
- *= depot.css 
- *= scaffolds.css
- *= carts.css
- *= admin.css
- *= line_items.css
- *= orders.css
- *= payment_types.css
- *= products.css
- *= sessions.css
- *= store.css
- *= users.css         
+ *= require depot.css 
+ *= require scaffolds.css
+ *= require carts.css
+ *= require admin.css
+ *= require line_items.css
+ *= require orders.css
+ *= require payment_types.css
+ *= require products.css
+ *= require sessions.css
+ *= require store.css
+ *= require users.css         
  */
