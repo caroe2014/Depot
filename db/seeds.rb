@@ -53,3 +53,54 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/images/rtp.jpg',
   :price => 43.75)
+
+Product.create(:title => 'The Rails 4 Way (3rd Edition)',
+  :description => 
+    %{<p>
+        The “Bible” for Rails Development: Now Fully Updated for Rails 4.1
+      </p>},
+  :image_url => '/images/rails4way.jpeg',
+  :price => 31.78)
+  
+Product.create(:title => 'Rails 4 Test Prescriptions: Build a Healthy Codebase',
+  :description => 
+    %{<p>
+        Does your Rails code suffer from bloat, brittleness, or inaccuracy? Cure 
+        these problems with a regular dose of test-driven development. Rails 4 
+        Test Prescriptions is a comprehensive guide to how tests can help you 
+        design and write better Rails applications. In this completely revised 
+        edition, you'll learn why testing works and how to test effectively using 
+        Rails 4, Minitest 5, and RSpec 3, as well as popular testing libraries such 
+        as factory_girl and Cucumber. Do what the doctor ordered to make your 
+        applications feel all better. Side effects may include better code, fewer 
+        bugs, and happier developers.
+      </p>},
+  :image_url => '/images/rails4test.jpeg',
+  :price => 31.74)     
+
+Product.create(:title => 'JavaScript: The Definitive Guide',
+  :description => 
+    %{<p>
+        Since 1996, JavaScript: The Definitive Guide has been the bible for JavaScript
+         programmers—a programmer's guide and comprehensive reference to the core 
+         language and to the client-side JavaScript APIs defined by web browsers. The 
+         6th edition covers HTML5 and ECMAScript 5. Many chapters have been completely 
+         rewritten to bring them in line with today's best web development practices. 
+         New chapters in this edition document jQuery and server side JavaScript. It's 
+         recommended for experienced programmers who want to learn the programming 
+         language of the Web, and for current JavaScript programmers who want to master it. 
+         "A must-have reference for expert JavaScript programmers... well-organized and 
+         detailed." —Brendan Eich, creator of JavaScript, CTO of Mozilla "I made a career of
+          what I learned from JavaScript: The Definitive Guide.” —Andrew Hedges, Tapulous
+      </p>},
+  :image_url => '/images/rails4test.jpeg',
+  :price => 22.99)
+  
+Product.create(:title => 'Programming Ruby 1.9',
+  :description => 
+    %{<p>
+        Ruby is the fastest growing and most exciting dynamic language out there. If you 
+        need to get working programs delivered fast, you should add Ruby to your toolbox.
+      </p>},
+  :image_url => '/images/ruby.jpg',
+  :price => 49.50)

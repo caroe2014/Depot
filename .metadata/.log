@@ -4981,3 +4981,28 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/edwincar
 
 !ENTRY org.eclipse.core.net 1 0 2015-02-22 22:48:27.497
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2015-02-22 23:34:33.282 -----------------------------------------------
+eclipse.buildId=3.6.0.201407100658
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/edwincaro/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/edwincaro/.eclipse_keyring -consoleLog -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-02-22 23:34:37.456
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.aptana.ruby.core 4 0 2015-02-22 23:39:02.414
+!MESSAGE (Build 3.6.0.201407100658) [ERROR]  Expected field decl on top of stack, but was: 
+
+!ENTRY com.aptana.ruby.core 4 0 2015-02-22 23:39:02.426
+!MESSAGE (Build 3.6.0.201407100658) [ERROR]  Expected block on top of stack, but was: stringify_keys(other)
+
+!ENTRY com.aptana.ruby.core 4 0 2015-02-22 23:39:02.438
+!MESSAGE (Build 3.6.0.201407100658) [ERROR]  Expected method decl on top of stack, but was: Session
+
+!ENTRY com.aptana.ruby.core 4 0 2015-02-22 23:39:02.451
+!MESSAGE (Build 3.6.0.201407100658) [ERROR]  Expected type decl on top of stack, but was: 
+
+!ENTRY com.aptana.ruby.core 4 0 2015-02-22 23:39:02.462
+!MESSAGE (Build 3.6.0.201407100658) [ERROR]  AST stack was empty upon exiting script, but should have contained the script.
