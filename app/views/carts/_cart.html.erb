@@ -4,7 +4,7 @@
 	<table>
 		<% for item in @cart.line_items %>
 
-			<%= render(:controller => 'line_item', :partial => 'line_items/line_items', :locals => {:item => item} ) %>
+			<%= render(:controller => 'line_item', :partial => 'line_items/line_items', :remote => true, :locals => {:item => item} ) %>
 				
 		<% end %>
 		<tr class="total_line">
