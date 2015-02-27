@@ -36,7 +36,7 @@ Depot::Application.configure do
     :domain => "gmail.com", 
     :authentication => "plain",
     :user_name => "cromanon2012@gmail.com",
-    :password => "1dv1vvdu",
+    :password => "      ",
     :enable_starttls_auto => true
   }
   config.action_mailer.default_url_options = "localhost:3000" 
