@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def set_checkout
-    @checkout = button_to t('cart.checkout'), new_order_url, :method=> :get, :id => 'button_id', :remote => true,
+    @checkout = button_to t('cart.checkout'), new_order_path, :method=> :get, :id => 'button_id', :remote => true,
                 data: { disable_with: t('cart.checkout') }
   end
   
